@@ -22,35 +22,35 @@ parisTimeElement.innerHTML = parisTime.format("h:m:ss [<small>]A[</small>]")
 
 
 
-let italyElement = document.querySelector("#italy");
-    let italyDateElement = italyElement.querySelector(".date");
-    let italyTimeElement = italyElement.querySelector(".time");
-    let italyTime = moment().tz("Europe/Italy");
-
-
-italyDateElement.innerHTML = italyTime.format("MMMM Do YYYY")
-italyTimeElement.innerHTML = italyTime.format("h:m:ss [<small>]A[</small>]")
-
-
-
-
-
-
-let germanyElement = document.querySelector("#germany");
-    let germanyDateElement = germanyElement.querySelector(".date");
-    let germanyTimeElement = germanyElement.querySelector(".time");
-    let germanyTime = moment().tz("Europe/Germany");
-
-
-germanyDateElement.innerHTML = germanyTime.format("MMMM Do YYYY")
-germanyTimeElement.innerHTML = germanyTime.format("h:m:ss [<small>]A[</small>]")
-
-
-
 
 }
 
+
+
+
+
+
+
 setInterval(updateTime, 1000)
+
+
+
+
+
+function updateCity (event) {
+
+    let cityTimeZone = event.target.value;
+    let cityTime = moment().tz(cityTimeZone)
+    console.log(cityTime.format("MMMM Do YYYY"))
+
+    let citiesListElement = document.querySelector("#cities-list");
+    citiesListElement.innerHTML = "Hello"
+    
+}
+
+
+let citiesSelect = document.querySelector("#city-selection");
+citiesSelectElement.addEventListener("change", updateCity);
 
 
 
